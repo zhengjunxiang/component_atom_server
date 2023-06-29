@@ -1,0 +1,12 @@
+appKey: com.sk.vis.atom
+
+provider: # 备注：provider 只用于 Nest-CLI 本地启动测试。
+  runtime: nodejs
+  envs:
+    key1: value1
+
+# templateType: web_nodejs_koa
+
+functions:
+  main:
+    handler: nest.main

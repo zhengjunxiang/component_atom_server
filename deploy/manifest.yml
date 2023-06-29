@@ -1,0 +1,27 @@
+version: v1
+build:
+  tools:
+    node: 16.11.0
+    git:
+  cache:
+    dirs:
+      - node_modules
+  run:
+    workDir: ./
+    cmd:
+      - sh deploy/compile.sh
+  target:
+    files:
+      - ./
+
+autodeploy:
+  targetDir: /opt/mmtt/apps/nest/
+  run: sh deploy/run.sh
+  check: curl -v localhost:8080/health
+  checkRetry: 10
+  checkInterval: 10s
+  hulkos: centos7
+  tools:
+    node: 16.11.0
+
+
